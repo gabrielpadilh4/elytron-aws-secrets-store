@@ -26,7 +26,7 @@ public class AwsSecretsCredentialStore extends CredentialStoreSpi {
         try {
             this.awsSecretManagerClient = SecretsManagerClient
                     .builder()
-                    .credentialsProvider(DefaultCredentialsProvider.create())
+                    .credentialsProvider(DefaultCredentialsProvider.builder().build())
                     .build();
 
         } catch (Exception e) {
