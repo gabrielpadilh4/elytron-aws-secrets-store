@@ -16,7 +16,7 @@ This module allows WildFly to dynamically fetch sensitive credentials (like data
 
 - AWS credentials configured. See the official [sdk-for-java](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/get-started-auth.html) for detailed instructions.
 - WildFly / JBoss EAP installed.
-- The **elytron-aws-secrets-store-1.0-SNAPSHOT.jar** file built from this source.
+- The [elytron-aws-secrets-store-1.0-SNAPSHOT.jar](https://github.com/gabrielpadilh4/elytron-aws-secrets-store/releases/download/1.0.0/elytron-aws-secrets-store-1.0-SNAPSHOT.jar)
 ---
 
 ## ⚙️ Usage Example
