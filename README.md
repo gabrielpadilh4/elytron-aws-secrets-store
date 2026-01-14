@@ -79,10 +79,15 @@ Register the custom provider so Elytron can recognize the AWS implementation:
 reload
 ~~~
 
-4. Create the credential store instance(make sure to set the AWS_PROFILE and AWS_REGION property to your desired value)
+4. Create the credential store instance(make sure to set the AWS_REGION property to your desired value)
 ~~~
-/subsystem=elytron/credential-store=AwsSecretsCredentialStore:add(providers=AwsSecretsCredentialStoreProvider,credential-reference={clear-text=''},implementation-properties={AWS_PROFILE=localstack,AWS_REGION=us-east-1}, type=AwsSecretsCredentialStore
+/subsystem=elytron/credential-store=AwsSecretsCredentialStore:add(providers=AwsSecretsCredentialStoreProvider,credential-reference={clear-text=''}, type=AwsSecretsCredentialStore)
 ~~~
 Note that `clear-text` value will not be used. I have left it empty because is mandatory. In my example `AWS_PROFILE` is the one configured under `~/.aws/config`
 
-
+5. Pass the Java properties for the Java SDK. E.g for referencing a `profile`
+~~~
+cd $WILDFLY_HOME
+./bin/standalone.sh -Daws.profile=localstack
+~~~
+Where `localstack` is a profile under `~/.aws/config`. Check the [JVM settings reference for all system properties options](https://docs.aws.amazon.com/sdkref/latest/guide/settings-reference.html#JVMSettings)
