@@ -79,7 +79,7 @@ Register the custom provider so Elytron can recognize the AWS implementation:
 reload
 ~~~
 
-4. Create the credential store instance(make sure to set the AWS_REGION property to your desired value)
+4. Create the credential store instance
 ~~~
 /subsystem=elytron/credential-store=AwsSecretsCredentialStore:add(providers=AwsSecretsCredentialStoreProvider,credential-reference={clear-text=''}, type=AwsSecretsCredentialStore)
 ~~~
